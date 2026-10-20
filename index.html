@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAZZEL — Clover Safety</title>
+<meta name="description" content="PAZZEL: media edukasi pendamping puzzle untuk mengenali tanda bahaya, menjaga privasi, menentukan tindakan aman, dan meminta bantuan.">
+<meta name="theme-color" content="#7c5cc4">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/extra.css">
+<script src="js/theme.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Lompat ke konten utama</a>
+<div id="app">
+  <header class="top">
+    <div class="top-in">
+      <a class="brand" href="#/" aria-label="PAZZEL, Clover Safety — ke Beranda">
+        <span class="logo" aria-hidden="true">🍀</span>
+        <span>PAZZEL<small>CLOVER SAFETY</small></span>
+      </a>
+      <button class="acct-btn menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-main">☰ Menu</button>
+      <nav class="main" id="nav-main" aria-label="Menu utama">
+        <ul id="nav-list"></ul>
+      </nav>
+      <a class="acct-btn" id="acct-link" href="#/akun">Masuk</a>
+      <button type="button" class="alarm-btn desk" data-act="alarm" aria-label="ALARM TANDA BAHAYA. Menekan tombol ini membunyikan sirene keras di perangkat ini.">🚨 ALARM TANDA BAHAYA</button>
+    </div>
+  </header>
+
+  <main id="main" aria-live="off"><noscript><p><strong>PAZZEL membutuhkan JavaScript.</strong> Jika kamu butuh bantuan sekarang: telepon 112 (darurat) atau 129 (SAPA 129), atau datangi orang dewasa tepercaya.</p></noscript></main>
+
+  <footer class="foot">
+    <p>PAZZEL adalah media edukasi, bukan alat diagnosis atau layanan darurat. Alarm hanya berbunyi di perangkat ini dan tidak menghubungi siapa pun. · <a href="#/tentang">Tentang, privasi &amp; batasan fitur</a> · <a href="#/tampilan">Tampilan &amp; aksesibilitas</a></p>
+  </footer>
+
+  <button type="button" class="alarm-bar" data-act="alarm" aria-label="ALARM TANDA BAHAYA. Menekan tombol ini membunyikan sirene keras di perangkat ini."><span aria-hidden="true">🚨</span> ALARM TANDA BAHAYA</button>
+</div>
+
+<div id="alarm-overlay" role="alertdialog" aria-modal="true" aria-labelledby="al-title" aria-describedby="al-desc" hidden>
+  <div class="al-box">
+    <div class="al-icon" aria-hidden="true">🚨</div>
+    <h2 id="al-title">ALARM AKTIF</h2>
+    <p class="al-msg">Kamu merasa tidak aman? Utamakan keselamatanmu.</p>
+    <p id="al-desc">Jika memungkinkan, menjauhlah ke tempat aman dan cari bantuan orang dewasa tepercaya. Jika ada bahaya langsung, minta bantuan orang di sekitar atau hubungi layanan darurat setempat.</p>
+    <div id="al-fail" role="status" hidden></div>
+    <button type="button" id="al-stop">HENTIKAN ALARM</button>
+    <div class="al-row">
+      <button type="button" id="al-trust" aria-expanded="false" aria-controls="al-trustpanel">HUBUNGI ORANG TEPERCAYA</button>
+      <a id="al-info" href="https://laporsapa129.kemenpppa.go.id/" target="_blank" rel="noopener noreferrer">INFORMASI BANTUAN RESMI</a>
+    </div>
+    <div class="al-panel" id="al-trustpanel" hidden>
+      <p><strong>Siapa yang bisa kamu datangi sekarang?</strong></p>
+      <ul class="clean">
+        <li>Guru BK, wali kelas, atau guru lain yang ada di dekatmu.</li>
+        <li>Orang tua, wali, atau anggota keluarga dewasa yang aman.</li>
+        <li>Petugas keamanan, penjaga toko, atau orang dewasa di tempat ramai.</li>
+      </ul>
+      <p>Kamu bisa berkata: <em>“Aku merasa tidak aman, tolong temani aku.”</em></p>
+      <p>Bantuan resmi: <a href="tel:129">telepon 129 (SAPA 129)</a> · <a href="tel:112">112 (darurat)</a></p>
+      <p class="hint" style="color:#5f5b78">Alarm ini tidak otomatis mengirim pesan atau lokasi ke siapa pun.</p>
+    </div>
+  </div>
+</div>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="js/app.js"></script>
+<script src="js/extra.js"></script>
+</body>
+</html>

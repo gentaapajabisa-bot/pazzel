@@ -1,0 +1,27 @@
+/* tampilan tambahan: mode gelap, huruf besar, kontras tinggi, chat, kuis */
+html[data-size=lg] body{font-size:20px}
+html[data-contrast=high]{--garis:#6b6490}
+html[data-contrast=high] :is(.card,fieldset,details,.opt,.myth,input,textarea,select){border-color:var(--ungu-t)}
+html[data-contrast=high] a{text-decoration:underline}
+html[data-theme=dark]{color-scheme:dark;--bg:#14112a;--putih:#1f1b3a;--teks:#ece9f8;--abu:#b4aed0;--garis:#3a3466;--ungu-m:#2d2656;--ungu-t:#cdbcff}
+html[data-theme=dark] body{background:linear-gradient(180deg,#1a1535,#14112a 260px,#110e24)}
+html[data-theme=dark] header.top{background:rgba(26,21,53,.94)}
+html[data-theme=dark] :is(.btn,.acct-btn,.opt,.tab,.myth,details,fieldset,input[type=text],input[type=password],textarea,select){background:var(--putih);color:var(--teks)}
+html[data-theme=dark] .btn-primary,html[data-theme=dark] .tab[aria-selected=true],html[data-theme=dark] .tab[aria-pressed=true],html[data-theme=dark] .acct-btn[aria-current=page]{background:var(--ungu);color:#fff}
+html[data-theme=dark] .btn-pink{background:var(--pink);color:var(--pink-t)}
+html[data-theme=dark] .btn-danger{background:var(--merah);color:#fff}
+html[data-theme=dark] .opt[aria-pressed=true]{background:var(--ungu-m)}
+html[data-theme=dark] .hero{background:linear-gradient(135deg,#2b2160,#4a2150 60%,#1f3a63)}
+html[data-theme=dark] .pill{background:var(--ungu-m)}
+html[data-theme=dark] .pill.done{background:var(--hijau)}
+html[data-theme=dark] .skip{color:#2a2540}
+/* alarm selalu terang & terbaca */
+html[data-theme=dark] #alarm-overlay{--teks:#2a2540;--abu:#5f5b78;--ungu-t:#4b2f8f}
+/* chat & kuis */
+.chat{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.bub{max-width:82%;padding:10px 14px;border-radius:16px}
+.bub.them{background:var(--ungu-m);align-self:flex-start;border-bottom-left-radius:4px}
+.bub.me{background:var(--ungu);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.chat .fb{margin:4px 0}
+.qprog{font-size:.9rem;color:var(--abu);margin-bottom:6px}
+.opt[disabled]{opacity:.75;cursor:default}
